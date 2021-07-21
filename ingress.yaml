@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test-ingress
+  namespace: test
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /canary(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: podinfo-canary
+            port:
+              number: 9898      
+      - path: /(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: podinfo-primary
+            port:
+              number: 9898
