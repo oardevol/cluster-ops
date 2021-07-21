@@ -4,8 +4,8 @@ metadata:
   name: podinfo
   labels:
     app: podinfo
-    owner: oriol
-    anotherowner: felip
+    owner: oriol2
+    anotherowner: felip2
   namespace: test
 spec:
   minReadySeconds: 5
