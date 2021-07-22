@@ -12,21 +12,21 @@ spec:
   rules:
   - http:
       paths:
-      - path: /(.*)
+      - path: /
         pathType: "Prefix"
         backend:
           service:
             name: podinfo-primary
             port:
               number: 9898      
-      - path: /canary(/|$)(.*)
+      - path: /canary
         pathType: "Prefix"
         backend:
           service:
             name: podinfo-canary
             port:
               number: 9898      
-      - path: /google(/|$)(.*)
+      - path: /google
         pathType: "Prefix"
         backend:
           service:
