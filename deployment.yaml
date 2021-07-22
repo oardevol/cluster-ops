@@ -4,8 +4,6 @@ metadata:
   name: podinfo
   labels:
     app: podinfo
-    owner: oriol2
-    anotherowner: felip2
   namespace: test
 spec:
   minReadySeconds: 5
@@ -28,7 +26,7 @@ spec:
     spec:
       containers:
       - name: podinfod
-        image: stefanprodan/podinfo:3.1.2
+        image: stefanprodan/podinfo:3.1.3
         imagePullPolicy: IfNotPresent
         ports:
         - name: http
