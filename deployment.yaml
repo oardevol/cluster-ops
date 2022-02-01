@@ -4,6 +4,7 @@ metadata:
   name: podinfo
   labels:
     app: podinfo
+    new: label
   namespace: test
 spec:
   minReadySeconds: 5
